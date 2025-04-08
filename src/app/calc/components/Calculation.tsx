@@ -15,7 +15,7 @@ export default function Calculation() {
   return (
     <div className="flex flex-col items-center gap-6">
       <Card className="flex flex-col items-center font-bold text-3xl">
-        <h1>Your Coeficient</h1>
+        <h1>Your Coefficient</h1>
         <h1 className="text-7xl">{(finalResult * 100).toFixed(1) + '%'}</h1>
       </Card>
 
