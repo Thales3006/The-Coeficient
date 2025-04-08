@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Coeficiente de Panizio',
-  description: 'Um jeito mais fácil de delegar suas escolhas',
+  title: 'Panizio Coeficient',
+  description: 'An easier way to delegate your choices',
 };
 
 export default function RootLayout({

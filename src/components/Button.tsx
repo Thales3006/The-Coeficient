@@ -16,7 +16,7 @@ export default function Button({
     <button
       onClick={onClick}
       className={clsx(
-        'bg-white rounded-xl p-3 text-black font-bold flex flex-col items-center',
+        'bg-black dark:bg-white text-white dark:text-black rounded-xl p-3 font-bold flex flex-col items-center',
         className
       )}
     >
