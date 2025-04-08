@@ -60,6 +60,7 @@ export default function Tests({
               title={`Test ${index + 1}`}
               type="number"
               value={value}
+              placeholder="0.00"
               onChange={(newValue) => handleChange(index, newValue)}
             />
             {index !== 0 ? (
