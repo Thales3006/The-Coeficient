@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Panizio Coeficient',
-  description: 'An easier way to delegate your choices',
+  title: 'Panizio Coefficient',
 };
 
 export default function RootLayout({
