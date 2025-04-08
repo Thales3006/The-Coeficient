@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Button } from "@/components";
-import { Variables } from ".";
-import { useState } from "react";
+import { Button } from '@/components';
+import { Variables } from '.';
+import { useState } from 'react';
 
 export default function Calculation() {
   const [liveResult, setResult] = useState(0);
@@ -20,7 +20,7 @@ export default function Calculation() {
         font-bold text-3xl"
       >
         <h1>Your Coeficient</h1>
-        <h1 className="text-7xl">{(finalResult * 100).toFixed(1) + "%"}</h1>
+        <h1 className="text-7xl">{(finalResult * 100).toFixed(1) + '%'}</h1>
       </div>
 
       <Variables title="Variables" setResult={setResult}></Variables>

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
 export default function OutputBox({
   value,
@@ -13,8 +13,8 @@ export default function OutputBox({
     <>
       <div
         className={clsx(
-          "flex-col flex items-center border-2 p-2 rounded-xl",
-          className,
+          'flex-col flex items-center border-2 p-2 rounded-xl',
+          className
         )}
       >
         <h2>Output</h2>

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import { Button } from "@/components";
-import { Variable, CloseBt } from ".";
+import { useState } from 'react';
+import Image from 'next/image';
+import { Button } from '@/components';
+import { Variable, CloseBt } from '.';
 
 export default function Variables({
   title,
@@ -41,7 +41,7 @@ export default function Variables({
     if (variables.length < MAX_VAR) {
       setVariables([...variables, 0]);
     } else {
-      window.alert("Too much variables!");
+      window.alert('Too much variables!');
     }
   };
 

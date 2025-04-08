@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { InputBox, Button } from "@/components";
-import { CloseBt } from "./";
+import { useState } from 'react';
+import { InputBox, Button } from '@/components';
+import { CloseBt } from './';
 
 export default function Tests({
   onChange,
@@ -12,7 +12,7 @@ export default function Tests({
   const MAX_INPUTS = 10;
   const MAX_VALUE = 10;
 
-  const [values, setValues] = useState<string[]>([""]);
+  const [values, setValues] = useState<string[]>(['']);
 
   const handleChange = (index: number, newValue: string) => {
     const updatedValues = [...values];
@@ -34,11 +34,11 @@ export default function Tests({
 
   const handleAdd = () => {
     if (values.length < MAX_INPUTS) {
-      const updated = [...values, ""];
+      const updated = [...values, ''];
       setValues(updated);
       onChange(calculateTotal(updated));
     } else {
-      window.alert("Too much inputs!");
+      window.alert('Too much inputs!');
     }
   };
 

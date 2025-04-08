@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { OutputBox } from "@/components";
-import { Tests } from "./";
+import { OutputBox } from '@/components';
+import { Tests } from './';
 
 export default function Variable({
   value,

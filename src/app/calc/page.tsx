@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { InlineMath } from "@/components";
-import { Calculation } from "./components";
+import Link from 'next/link';
+import { InlineMath } from '@/components';
+import { Calculation } from './components';
 
 export default function Page() {
   return (

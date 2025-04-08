@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { Button } from "@/components";
+import Image from 'next/image';
+import { Button } from '@/components';
 
 export default function CloseBt({ onClick }: { onClick: () => void }) {
   return (

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
-import { ReactNode } from "react";
+import clsx from 'clsx';
+import { ReactNode } from 'react';
 
 export default function Button({
   children,
@@ -16,8 +16,8 @@ export default function Button({
     <button
       onClick={onClick}
       className={clsx(
-        "bg-white rounded-xl p-3 text-black font-bold flex flex-col items-center",
-        className,
+        'bg-white rounded-xl p-3 text-black font-bold flex flex-col items-center',
+        className
       )}
     >
       {children}
