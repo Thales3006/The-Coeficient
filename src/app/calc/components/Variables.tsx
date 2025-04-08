@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from "react";
-import { Variable, AddBt, CloseBt} from ".";
+import Image from "next/image";
+import { Button } from "@/components";
+import { Variable, CloseBt} from ".";
 
 export default function Variables({ title, setResult } : {
     title: string;
@@ -55,7 +57,16 @@ export default function Variables({ title, setResult } : {
               </li>
             ))}
           </ul>
-          <AddBt onClick={handleAdd}>Add Variable</AddBt>
+
+          <Button onClick={handleAdd}>
+            <Image
+                src="/plus.png"
+                width={20}
+                height={20}
+                alt=""
+            />
+            Add Variable
+          </Button>
         </div>
     );
 }
