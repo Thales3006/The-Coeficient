@@ -1,12 +1,13 @@
 {
-  "name": "panizio",
+  "name": "the-coeficient",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "clsx": "^2.1.1",

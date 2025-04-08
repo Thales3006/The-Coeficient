@@ -3,24 +3,21 @@
 import clsx from 'clsx';
 import { ReactNode } from 'react';
 
-export default function Button({
+export default function Card({
   children,
   className,
-  onClick,
 }: {
   children: ReactNode;
   className?: string;
-  onClick: () => void;
 }) {
   return (
-    <button
-      onClick={onClick}
+    <div
       className={clsx(
-        'bg-black dark:bg-white text-white dark:text-black rounded-xl p-3 font-bold flex flex-col items-center',
+        'border-black dark:border-white bg-white dark:bg-black border-4 p-4 rounded-xl gap-2',
         className
       )}
     >
       {children}
-    </button>
+    </div>
   );
 }
