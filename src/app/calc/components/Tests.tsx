@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { InputBox, Button } from '@/components';
 import { CloseBt } from './';
 
@@ -51,6 +51,11 @@ export default function Tests({
       arr.length /
       MAX_VALUE;
 
+  useEffect(() => {
+    onChange(calculateTotal(values));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="flex-col flex gap-2">
       <ul className="flex-col flex gap-2 items-center">
@@ -60,6 +65,7 @@ export default function Tests({
               title={`Test ${index + 1}`}
               type="number"
               value={value}
+              placeholder="0.00"
               onChange={(newValue) => handleChange(index, newValue)}
             />
             {index !== 0 ? (
