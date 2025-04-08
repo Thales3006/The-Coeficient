@@ -1,11 +1,14 @@
-'use client';
-import clsx from 'clsx';
-import katex from 'katex';
+"use client";
 
-export default function InlineMath({ math, className }: { 
+import clsx from "clsx";
+import katex from "katex";
+
+export default function InlineMath({
+  math,
+  className,
+}: {
   math: string;
   className?: string;
-
 }) {
   const html = katex.renderToString(math, {
     throwOnError: false,
@@ -14,7 +17,7 @@ export default function InlineMath({ math, className }: {
   return (
     <span
       dangerouslySetInnerHTML={{ __html: html }}
-      className={clsx("inline-block text-xl font-bold",className)}
+      className={clsx("inline-block text-xl font-bold", className)}
     />
   );
 }

@@ -1,72 +1,74 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components";
-import { Variable, CloseBt} from ".";
+import { Variable, CloseBt } from ".";
 
-export default function Variables({ title, setResult } : {
-    title: string;
-    setResult: (value: number) => void;
-}){
-    const [variables, setVariables] = useState([0]);
-    const MAX_VAR = 10;
+export default function Variables({
+  title,
+  setResult,
+}: {
+  title: string;
+  setResult: (value: number) => void;
+}) {
+  const [variables, setVariables] = useState([0]);
+  const MAX_VAR = 10;
 
-    const calculateCoeficient = (list: number[]) => {
-        const prod = list.reduce((prod,x)=> prod * (1-x), 1);
+  const calculateCoeficient = (list: number[]) => {
+    const prod = list.reduce((prod, x) => prod * (1 - x), 1);
 
-        setResult(1-Math.pow(prod,1/variables.length));
+    setResult(1 - Math.pow(prod, 1 / variables.length));
+  };
+
+  const handleChange = (index: number, newValue: number) => {
+    const updated = [...variables];
+    updated[index] = newValue;
+    setVariables(updated);
+    calculateCoeficient(updated);
+  };
+
+  const handleRemove = (index: number) => {
+    if (variables.length > 1) {
+      const updated = [...variables];
+      updated.splice(index, 1);
+      setVariables(updated);
+      calculateCoeficient(updated);
     }
+  };
 
-    const handleChange = (index: number, newValue: number) => {
-        const updated = [...variables];
-        updated[index] = newValue;
-        setVariables(updated);
-        calculateCoeficient(updated);
-      };
+  const handleAdd = () => {
+    if (variables.length < MAX_VAR) {
+      setVariables([...variables, 0]);
+    } else {
+      window.alert("Too much variables!");
+    }
+  };
 
-    const handleRemove = (index: number) => {
-        if (variables.length > 1) {
-            const updated = [...variables];
-            updated.splice(index, 1);
-            setVariables(updated);
-            calculateCoeficient(updated);
-        }
-    };
-
-    const handleAdd = () => {
-        if(variables.length < MAX_VAR){
-            setVariables([...variables, 0])
-        }else{
-            window.alert("Too much variables!")
-        }
-    };
-
-    return (
-        <div className="flex flex-col items-center gap-6">
-          <h1 className="font-bold">{title}</h1>
-          {variables.length === 0? <p>No variables added</p> : null}
-          <ul className="list-group flex flex-col items-center gap-4">
-            {variables.map((value, index) => (
-              <li key={index} className="flex items-center gap-2 w-full">
-                <Variable 
-                value={value}
-                onChange={(newValue) => handleChange(index, newValue)}
-                />
-                {index!==0? <CloseBt onClick={() => handleRemove(index)} />: <></>}
-              </li>
-            ))}
-          </ul>
-
-          <Button onClick={handleAdd}>
-            <Image
-                src="/plus.png"
-                width={20}
-                height={20}
-                alt=""
+  return (
+    <div className="flex flex-col items-center gap-6">
+      <h1 className="font-bold">{title}</h1>
+      {variables.length === 0 ? <p>No variables added</p> : null}
+      <ul className="list-group flex flex-col items-center gap-4">
+        {variables.map((value, index) => (
+          <li key={index} className="flex items-center gap-2 w-full">
+            <Variable
+              value={value}
+              onChange={(newValue) => handleChange(index, newValue)}
             />
-            Add Variable
-          </Button>
-        </div>
-    );
+            {index !== 0 ? (
+              <CloseBt onClick={() => handleRemove(index)} />
+            ) : (
+              <></>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <Button onClick={handleAdd}>
+        <Image src="/plus.png" width={20} height={20} alt="" />
+        Add Variable
+      </Button>
+    </div>
+  );
 }
