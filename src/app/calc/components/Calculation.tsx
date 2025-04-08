@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components';
+import { Button, Card } from '@/components';
 import { Variables } from '.';
 import { useState } from 'react';
 
@@ -14,14 +14,10 @@ export default function Calculation() {
 
   return (
     <div className="flex flex-col items-center gap-6">
-      <div
-        className="flex-col flex items-center 
-        border-2 p-4 rounded-xl 
-        font-bold text-3xl"
-      >
+      <Card className="flex flex-col items-center font-bold text-3xl">
         <h1>Your Coeficient</h1>
         <h1 className="text-7xl">{(finalResult * 100).toFixed(1) + '%'}</h1>
-      </div>
+      </Card>
 
       <Variables title="Variables" setResult={setResult}></Variables>
 

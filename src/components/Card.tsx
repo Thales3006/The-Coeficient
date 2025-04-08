@@ -12,10 +12,7 @@ export default function Card({
 }) {
   return (
     <div
-      className={clsx(
-        'border-white border-5 p-6 rounded-xl flex gap-10',
-        className
-      )}
+      className={clsx('border-white border-4 p-4 rounded-xl gap-2', className)}
     >
       {children}
     </div>
