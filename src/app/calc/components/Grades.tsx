@@ -42,14 +42,14 @@ export default function Tests({
     }
   };
 
-  const calculateTotal = (arr: string[]) =>
-    1 -
-    arr.reduce((sum, val) => {
-      const n = parseFloat(val);
-      return sum + (isNaN(n) ? 0 : n);
-    }, 0) /
-      arr.length /
-      MAX_VALUE;
+  const calculateTotal = (arr: string[]) => {
+    const mean =
+      arr.reduce((sum, val) => {
+        const n = parseFloat(val);
+        return sum + (isNaN(n) ? 0 : n);
+      }, 0) / arr.length;
+    return 1 - (mean - 5 < 0 ? 0 : mean - 5) / MAX_VALUE;
+  };
 
   useEffect(() => {
     onChange(calculateTotal(values));

@@ -49,7 +49,7 @@ export default function Variables({
     <div className="flex flex-col items-center gap-6">
       <h1 className="font-bold text-xl">{title}</h1>
       {variables.length === 0 ? <p>No variables added</p> : null}
-      <ul className="list-group flex flex-col items-center gap-4">
+      <ul className="flex flex-col items-center gap-4">
         {variables.map((value, index) => (
           <li key={index} className="flex items-center gap-2 w-full">
             <Variable
