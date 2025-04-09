@@ -10,7 +10,7 @@ export default function InputBox({
   placeholder,
   onChange,
 }: {
-  title: string;
+  title?: string;
   value: string;
   type: string;
   className?: string;
@@ -19,7 +19,7 @@ export default function InputBox({
 }) {
   return (
     <div>
-      <h2>{title}</h2>
+      {title ? <h2>{title}</h2> : null}
       <input
         className={clsx('border-2 p-2 rounded-xl', className)}
         type={type}

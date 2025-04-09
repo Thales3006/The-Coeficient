@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { InputBox, Button } from '@/components';
-import { CloseBt } from './';
+import { CloseBt } from '.';
 
 export default function Tests({
   onChange,
