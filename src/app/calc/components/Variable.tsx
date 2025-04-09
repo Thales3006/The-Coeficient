@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, OutputBox, Select } from '@/components';
-import { Grades } from './';
+import { Absences, Grades } from './';
 import { useState } from 'react';
 
 export default function Variable({
@@ -18,9 +18,9 @@ export default function Variable({
       case 'Grades':
         return <Grades onChange={onChange} />;
       case 'Absences':
-        return <h1>AABSENCA</h1>;
+        return <Absences onChange={onChange} />;
       case 'Weather':
-        return <h1>Ueda</h1>;
+        return <h1>Ueda noto addad yeat</h1>;
       default:
         return null;
     }
