@@ -17,7 +17,7 @@ export default function Select({
   return (
     <select
       className={clsx(
-        'bg-white dark:bg-black border-white dark:border-white border-2 rounded-xl',
+        'bg-white dark:bg-black text-black dark:text-white border-black dark:border-white border-2 rounded-xl',
         className
       )}
       value={value}
